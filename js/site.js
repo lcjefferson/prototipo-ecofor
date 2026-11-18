@@ -101,7 +101,7 @@
   const BANNERS = {
     pt: {
       company: { title: "A empresa", sub: "Cuidamos de Fortaleza e do meio ambiente." },
-      sustain: { title: "Sustentabilidade", sub: "Coleta, destinação e educação ambiental." },
+      sustain: { title: "Sustentabilidade", sub: "O compromisso do Grupo Marquise com um futuro compartilhado." },
       news: { title: "Notícias", sub: "Reportagens e avisos da Ecofor e da Marquise Ambiental." },
       article: { title: "Notícias", sub: "Reportagens e avisos da Ecofor e da Marquise Ambiental." },
       careers: { title: "Carreiras", sub: "Escolha o tipo de vaga e venha cuidar de Fortaleza." },
@@ -118,7 +118,7 @@
     },
     en: {
       company: { title: "The company", sub: "We look after Fortaleza and the environment." },
-      sustain: { title: "Sustainability", sub: "Collection, disposal and environmental education." },
+      sustain: { title: "Sustainability", sub: "Grupo Marquise’s commitment to a shared future." },
       news: { title: "News", sub: "Stories and notices from Ecofor and Marquise Ambiental." },
       article: { title: "News", sub: "Stories and notices from Ecofor and Marquise Ambiental." },
       careers: { title: "Careers", sub: "Choose a job type and help look after Fortaleza." },
@@ -135,7 +135,7 @@
     },
     es: {
       company: { title: "La empresa", sub: "Cuidamos de Fortaleza y del medio ambiente." },
-      sustain: { title: "Sostenibilidad", sub: "Recolección, destino y educación ambiental." },
+      sustain: { title: "Sostenibilidad", sub: "El compromiso del Grupo Marquise con un futuro compartido." },
       news: { title: "Noticias", sub: "Reportajes y avisos de Ecofor y Marquise Ambiental." },
       article: { title: "Noticias", sub: "Reportajes y avisos de Ecofor y Marquise Ambiental." },
       careers: { title: "Carreras", sub: "Elija el tipo de vacante y cuide de Fortaleza." },
@@ -616,8 +616,64 @@
     openMaterials() { document.getElementById("materials")?.classList.add("open"); }
   };
 
+  function prefersReducedMotion() {
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  }
+
+  function internalDestination(anchor, event) {
+    if (!anchor || event.defaultPrevented || event.button !== 0) return "";
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return "";
+    if (anchor.target && anchor.target !== "_self") return "";
+    if (anchor.hasAttribute("download")) return "";
+    const href = anchor.getAttribute("href");
+    if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) return "";
+    let url;
+    try { url = new URL(anchor.href, location.href); } catch (err) { return ""; }
+    if (url.origin !== location.origin) return "";
+    if (url.pathname === location.pathname && url.search === location.search) return "";
+    return url.href;
+  }
+
+  let leaving = false;
+  function setupMotion() {
+    if (prefersReducedMotion()) return;
+    document.body.classList.add("motion");
+    const viewHeight = window.innerHeight || 800;
+    const sections = [...document.querySelectorAll("main > section")];
+    sections.forEach((section, index) => {
+      if (section.getBoundingClientRect().top < viewHeight * 0.82) return;
+      section.classList.add("reveal");
+      section.style.setProperty("--reveal-delay", `${(index % 3) * 70}ms`);
+    });
+    const hidden = document.querySelectorAll("main > section.reveal");
+    if (hidden.length) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-in");
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.14, rootMargin: "0px 0px -6% 0px" });
+      hidden.forEach((section) => observer.observe(section));
+    }
+    document.addEventListener("click", (event) => {
+      const anchor = event.target.closest("a");
+      const destination = internalDestination(anchor, event);
+      if (!destination || leaving) return;
+      event.preventDefault();
+      leaving = true;
+      document.body.classList.add("is-leaving");
+      window.setTimeout(() => { location.href = destination; }, 300);
+    });
+    window.addEventListener("pageshow", () => {
+      leaving = false;
+      document.body.classList.remove("is-leaving");
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     mount();
     document.dispatchEvent(new Event("ecofor:ready"));
+    setupMotion();
   });
 })();
