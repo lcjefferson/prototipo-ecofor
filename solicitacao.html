@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solicitação de Coleta | Ecofor</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="request">
+  <div id="site-header"></div>
+  <main>
+    <section class="page-head"><div class="container"><h1 data-i18n="forms.requestTitle">Solicitação de Coleta</h1><p class="lead" data-i18n="forms.requestLead"></p></div></section>
+    <section class="page-wrap">
+      <div class="container">
+        <form class="card-form" id="request-form">
+          <div class="form-grid">
+            <div><label for="req-name" data-i18n="forms.name">Nome</label><input id="req-name" required></div>
+            <div><label for="req-phone" data-i18n="forms.phone">Telefone</label><input id="req-phone" required></div>
+            <div class="full"><label for="req-email" data-i18n="forms.email">E-mail</label><input id="req-email" type="email" required></div>
+            <div><label for="req-address" data-i18n="forms.address">Endereço</label><input id="req-address" required></div>
+            <div><label for="req-area" data-i18n="forms.area">Bairro</label><input id="req-area" required></div>
+            <div><label for="req-type" data-i18n="forms.type">Tipo de resíduo</label>
+              <select id="req-type" required>
+                <option>Podas e volume verde</option>
+                <option>Entulho de pequena quantidade</option>
+                <option>Recicláveis em grande volume</option>
+                <option>Outros</option>
+              </select>
+            </div>
+            <div><label for="req-date" data-i18n="forms.date">Data preferida</label><input id="req-date" type="date" required></div>
+            <div class="full"><label for="req-notes" data-i18n="forms.notes">Observações</label><textarea id="req-notes"></textarea></div>
+          </div>
+          <p style="margin-top:16px"><button class="btn" type="submit" data-i18n="forms.send">Enviar solicitação</button></p>
+          <div class="form-ok" id="request-ok" hidden></div>
+        </form>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/data.js"></script>
+  <script src="js/site.js"></script>
+</body>
+</html>

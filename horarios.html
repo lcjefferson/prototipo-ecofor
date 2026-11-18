@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calendário de Coleta | Ecofor</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="schedule">
+  <div id="site-header"></div>
+  <main>
+  <section class="schedule-page">
+    <div class="container schedule-inner">
+      <h2 data-i18n="schedule.weekly">Calendário Semanal</h2>
+      <p class="hint" data-i18n="schedule.hint">Por favor selecione seu endereço para ver os horários de coleta na sua região</p>
+      <div class="schedule-filters">
+        <label class="visually-hidden" for="region">Região</label>
+        <select id="region"></select>
+        <label class="visually-hidden" for="area">Bairro</label>
+        <select id="area"></select>
+      </div>
+      <div class="days" id="days"></div>
+    </div>
+  </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/data.js"></script>
+  <script src="js/site.js"></script>
+  <script src="js/horarios.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Área do cliente | Ecofor</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="client">
+  <div id="site-header"></div>
+  <main>
+    <section class="page-head"><div class="container"><h1 data-i18n="forms.clientTitle">Área do cliente</h1><p class="lead" data-i18n="forms.clientLead"></p></div></section>
+    <section class="page-wrap">
+      <div class="container" style="max-width:720px">
+        <form class="card-form" id="login-form">
+          <div class="form-grid">
+            <div class="full"><label for="client-doc" data-i18n="forms.doc">CPF ou CNPJ</label><input id="client-doc" required></div>
+            <div class="full"><label for="client-pass" data-i18n="forms.password">Senha</label><input id="client-pass" type="password" required></div>
+          </div>
+          <p style="margin-top:16px"><button class="btn" type="submit" data-i18n="forms.enter">Entrar</button></p>
+          <div class="form-ok" id="login-err" hidden></div>
+        </form>
+        <div class="card-form" id="client-panel" hidden></div>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/data.js"></script>
+  <script src="js/site.js"></script>
+</body>
+</html>

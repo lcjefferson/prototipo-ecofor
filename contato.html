@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contato | Ecofor</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="contact">
+  <div id="site-header"></div>
+  <main>
+    <section class="page-head"><div class="container"><h1 data-i18n="forms.contactTitle">Contato</h1><p class="lead" data-i18n="forms.contactLead"></p></div></section>
+    <section class="page-wrap">
+      <div class="container split">
+        <form class="card-form" id="contact-form">
+          <div class="form-grid">
+            <div><label for="ct-name" data-i18n="forms.name">Nome</label><input id="ct-name" required></div>
+            <div><label for="ct-email" data-i18n="forms.email">E-mail</label><input id="ct-email" type="email" required></div>
+            <div class="full"><label for="ct-msg" data-i18n="forms.message">Mensagem</label><textarea id="ct-msg" required></textarea></div>
+          </div>
+          <p style="margin-top:16px"><button class="btn" type="submit" data-i18n="forms.send">Enviar</button></p>
+          <div class="form-ok" id="contact-ok" hidden></div>
+        </form>
+        <div class="info-list">
+          <article>
+            <h3>Central de Atendimento</h3>
+            <p><a href="tel:08002754400">0800 275 4400</a></p>
+          </article>
+          <article>
+            <h3>Fortaleza</h3>
+            <p>Coleta domiciliar, ecopontos e solicitações da capital.</p>
+          </article>
+          <article>
+            <h3>Marquise Ambiental</h3>
+            <p>Ecofor, EcoOsasco e EcoTaubaté.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/data.js"></script>
+  <script src="js/site.js"></script>
+</body>
+</html>

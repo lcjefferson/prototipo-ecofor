@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ecopontos | Ecofor</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="points">
+  <div id="site-header"></div>
+  <main>
+  <div class="eco-app">
+    <aside class="eco-side">
+      <h1 data-i18n="eco.title">Ecopontos em Fortaleza</h1>
+      <p class="lead" data-i18n="eco.lead">Encontre o local mais próximo para descarte correto de resíduos.</p>
+      <label class="searchline">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></svg>
+        <input id="eco-q" data-i18n-placeholder="eco.search" placeholder="Buscar por bairro, rua ou CEP...">
+      </label>
+      <div class="filters" id="eco-filters">
+        <button class="chip on" type="button" data-filter="all" data-key="all">Todos</button>
+        <button class="chip" type="button" data-filter="open" data-key="openNow">Abertos Agora</button>
+        <button class="chip" type="button" data-filter="near" data-key="near">Por perto</button>
+      </div>
+      <div id="eco-list"></div>
+    </aside>
+    <section class="eco-map">
+      <div id="map"></div>
+      <div class="map-tools">
+        <button type="button" id="map-search" aria-label="Buscar"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></svg></button>
+        <button type="button" id="map-locate" aria-label="Minha localização"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></button>
+      </div>
+    </section>
+  </div>
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/data.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/site.js"></script>
+  <script src="js/ecopontos.js"></script>
+</body>
+</html>

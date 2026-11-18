@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ecofor | Cuidamos de Fortaleza</title>
+  <meta name="description" content="Ecofor cuida da limpeza urbana de Fortaleza: horários de coleta, solicitação e ecopontos.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="home">
+  <div id="site-header"></div>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1 data-i18n-html="hero.title">Cuidamos de Fortaleza,<br>transformamos o amanhã.</h1>
+      </div>
+    </section>
+    <section class="quick">
+      <div class="container quick-grid">
+        <a class="quick-card" href="horarios.html">
+          <strong data-i18n="quick.schedule">Horários de Coleta</strong>
+          <img src="assets/icon-calendario.png" alt="">
+        </a>
+        <a class="quick-card" href="solicitacao.html">
+          <strong data-i18n="quick.request">Solicitação de Coleta</strong>
+          <img src="assets/icon-coleta-truck.png" alt="">
+        </a>
+        <a class="quick-card" href="ecopontos.html">
+          <strong data-i18n="quick.points">EcoPontos</strong>
+          <img src="assets/icon-ecopontos.png" alt="">
+        </a>
+      </div>
+    </section>
+    <section class="stats">
+      <div class="watermark" aria-hidden="true"><img src="assets/bg-eco.png?v=2" alt=""></div>
+      <div class="container stats-grid">
+        <article class="stat">
+          <div class="stat-ico">
+            <img src="assets/icon-toneladas.png" alt="">
+          </div>
+          <div>
+            <h3 data-i18n="stats.tons">+6 mil toneladas</h3>
+            <p data-i18n="stats.tonsSub">De resíduos coletados por dia</p>
+          </div>
+        </article>
+        <article class="stat">
+          <div class="stat-ico">
+            <img src="assets/icon-anos.png" alt="">
+          </div>
+          <div>
+            <h3 data-i18n="stats.years">+40 anos</h3>
+            <p data-i18n="stats.yearsSub">Cuidando de Fortaleza</p>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="commitment">
+      <div class="commitment-copy">
+        <h2 data-i18n="commit.title">EcoFor, Compromisso com Fortaleza e o Meio Ambiente</h2>
+        <a class="btn-lime" href="empresa.html" data-i18n="commit.more">SAIBA MAIS</a>
+      </div>
+      <div class="commitment-photo">
+        <img src="assets/worker.png" alt="Colaborador da Ecofor em frente ao caminhão de coleta">
+      </div>
+    </section>
+    <section class="helpbar">
+      <div class="container">
+        <span><strong data-i18n="help.before">Precisa de ajuda?</strong> <span data-i18n="help.after">Ligue para a Central de Atendimento:</span> <a href="tel:08002754400">0800 275 4400</a></span>
+        <span class="phone-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 3h4l2 5-3 2a12 12 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 5 5a2 2 0 0 1 2-2z"/></svg>
+        </span>
+      </div>
+    </section>
+    <section class="news">
+      <div class="container">
+        <h2 data-i18n="news.title">Notícias</h2>
+        <div class="news-slider">
+          <div class="news-grid" id="news-track"></div>
+          <button class="news-next" id="news-next" type="button" aria-label="Próximas notícias">→</button>
+        </div>
+        <div class="dots" id="news-dots"></div>
+        <a class="all-news" href="noticias.html"><span data-i18n="news.more">Acessar todas as notícias</span> <span class="plus">+</span></a>
+      </div>
+    </section>
+    <section class="shortcuts">
+      <div class="container shortcut-grid">
+        <a class="shortcut" href="responsabilidade.html">
+          <span class="bubble"><img src="assets/icon-sustentabilidade.png" alt=""></span>
+          <span data-i18n="short.social">Responsabilidade Social</span>
+        </a>
+        <a class="shortcut" href="carreiras.html">
+          <span class="bubble"><img src="assets/icon-carreiras.png" alt=""></span>
+          <span data-i18n="short.careers">Carreiras</span>
+        </a>
+        <a class="shortcut" href="contato.html">
+          <span class="bubble"><img src="assets/icon-fale.png" alt=""></span>
+          <span data-i18n="short.contact">Fale Conosco</span>
+        </a>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/data.js"></script>
+  <script src="js/site.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>
